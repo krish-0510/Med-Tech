@@ -28,7 +28,7 @@ const UserHomePage = () => {
   return (
     <div className="flex min-h-screen bg-gradient-to-r from-blue-100 to-blue-200">
       <UserNavbar user={user} />
-      <div className="flex-grow p-8 bg-white shadow-lg rounded-lg m-8">
+      <div className="flex-grow p-8 ml-64 bg-white shadow-lg rounded-lg m-8"> {/* Added ml-64 */}
         {user ? (
           <>
             <div className="flex items-center mb-8">

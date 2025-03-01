@@ -30,7 +30,7 @@ const UploadReport = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       <UserNavbar />
-      <div className="flex-grow p-8">
+      <div className="flex-grow p-8 ml-64"> {/* Added ml-64 */}
         <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold text-center text-gray-900">Upload Medical Report</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
