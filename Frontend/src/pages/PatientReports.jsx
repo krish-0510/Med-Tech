@@ -13,7 +13,8 @@ const PatientReports = () => {
     const fetchReports = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:4000/medical-reports/progress/${patientId}`, {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}
+/medical-reports/progress/${patientId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -30,7 +31,8 @@ const PatientReports = () => {
   const handleFeedbackSubmit = async (reportId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post(`http://localhost:4000/medical-reports/feedback/${reportId}`, {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}
+/medical-reports/feedback/${reportId}`, {
         feedback
       }, {
         headers: {

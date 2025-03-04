@@ -14,7 +14,8 @@ const PatientDoctorMessage = () => {
     const fetchMessages = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:4000/messages/conversation-with-doctor/${doctorId}`, {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}
+/messages/conversation-with-doctor/${doctorId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -31,7 +32,8 @@ const PatientDoctorMessage = () => {
   const sendMessage = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:4000/messages/send', {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}
+/messages/send`, {
         receiverId: doctorId,
         receiverModel: 'Doctor',
         content: message

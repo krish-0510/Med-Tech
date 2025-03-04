@@ -16,7 +16,8 @@ const DoctorLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/doctors/login', formData);
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}
+/doctors/login`, formData);
       localStorage.setItem('token', response.data.token);
       navigate('/doctor');
     } catch (error) {

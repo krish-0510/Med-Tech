@@ -13,7 +13,8 @@ const Navbar = ({ doctor: propDoctor }) => {
       if (!propDoctor) {
         try {
           const token = localStorage.getItem('token');
-          const response = await axios.get('http://localhost:4000/doctors/profile', {
+          const response = await axios.get(`${import.meta.env.VITE_BASE_URL}
+/doctors/profile`, {
             headers: {
               Authorization: `Bearer ${token}`
             }

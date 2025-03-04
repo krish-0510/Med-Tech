@@ -10,7 +10,8 @@ const UserHomePage = () => {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const response = await axios.get('http://localhost:4000/users/profile', {
+          const response = await axios.get(`${import.meta.env.VITE_BASE_URL}
+/users/profile`, {
             headers: {
               Authorization: `Bearer ${token}`
             }

@@ -10,7 +10,8 @@ const ProgressReport = () => {
     const fetchReports = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:4000/medical-reports/progress', {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}
+/medical-reports/progress`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

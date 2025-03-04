@@ -18,7 +18,8 @@ const UserSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/users/register', {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}
+/users/register`, {
         fullname: {
           firstname: formData.firstname,
           lastname: formData.lastname

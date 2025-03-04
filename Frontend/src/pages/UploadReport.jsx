@@ -15,7 +15,8 @@ const UploadReport = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:4000/medical-reports/upload', { report }, {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}
+/medical-reports/upload`, { report }, {
         headers: {
           Authorization: `Bearer ${token}`
         }

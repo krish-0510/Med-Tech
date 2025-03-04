@@ -11,7 +11,8 @@ const PatientsList = () => {
     const fetchPatients = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:4000/doctors/patients', {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}
+/doctors/patients`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

@@ -16,7 +16,8 @@ const UserLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/users/login', formData);
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}
+/users/login`, formData);
       localStorage.setItem('token', response.data.token); // Store token in localStorage
       navigate('/user');
     } catch (error) {

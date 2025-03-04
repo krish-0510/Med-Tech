@@ -21,7 +21,7 @@ const DoctorSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/doctors/register', {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/doctors/register`, {
         fullname: {
           firstname: formData.firstname,
           lastname: formData.lastname
